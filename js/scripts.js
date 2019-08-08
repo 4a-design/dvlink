@@ -83,7 +83,11 @@ $(document).ready(function(){
 
   function parallaxScroll(){
     var scrolled = $(window).scrollTop();
-    $('#mars').css('top',(-100-(scrolled*.10))+'px');
+    console.log(scrolled);
+    if(scrolled > 333) {
+      $('#mars').css('top',(-400+(scrolled*.9))+'px');
+    }
+    
     $('#sub-title').css('top',(334-(scrolled*.05))+'px');
   }
 });
