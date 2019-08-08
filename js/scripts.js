@@ -83,7 +83,6 @@ $(document).ready(function(){
 
   function parallaxScroll(){
     var scrolled = $(window).scrollTop();
-    console.log(scrolled);
     if(scrolled > 333) {
       $('#mars').css('top',(-400+(scrolled*.9))+'px');
     } else {
