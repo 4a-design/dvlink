@@ -78,8 +78,8 @@ $(document).ready(function(){
     $('#submit-button').toggleClass('input-enabled');
   });
   $(window).bind('scroll',function(e){
-    parallaxScroll();
-});
+      parallaxScroll();
+  });
 
   function parallaxScroll(){
     var scrolled = $(window).scrollTop();
