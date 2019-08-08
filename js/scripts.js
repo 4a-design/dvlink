@@ -86,6 +86,8 @@ $(document).ready(function(){
     console.log(scrolled);
     if(scrolled > 333) {
       $('#mars').css('top',(-400+(scrolled*.9))+'px');
+    } else {
+      $('#mars').css('top',('-100px'));
     }
     
     $('#sub-title').css('top',(334-(scrolled*.05))+'px');
