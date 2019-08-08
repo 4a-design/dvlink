@@ -163,6 +163,9 @@ form input[type=submit] {
 	position: relative;
 	z-index: -1;
 }
+#main h1 {
+	margin-bottom: 10px;
+}
 .sub-title {
 	color: #c0c0c0;
 	padding: 8px;
