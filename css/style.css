@@ -307,9 +307,11 @@ form input[type=submit] {
 	border: 1px solid #424242;
 	box-shadow: 0px 0px 60px #7c1700;
 }
-.a-tariff-active {
+.tariff-option {
+	transition: all 0.2s;
+}
+.tariff-active .tariff-option {
 	color: #f76127;
-	border: none;
 }
 .tariff-5 {
 	color: #ffa900;
