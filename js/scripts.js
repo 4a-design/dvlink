@@ -14,55 +14,21 @@ $(document).ready(function(){
       }
     });
   }
+
   $('#header').find('a').each(function() {
       if ($(this).attr('href') == loc) {
           $(this).toggleClass('active', $(this).attr('href') == loc);
         }
   });
-  $('#tariff-5').click(function() {
-    $('#tariff-option').val("Тариф S-Безлимит");
-    $('#tariff-5').addClass('tariff-active');
-    $('#tariff-8').removeClass('tariff-active');
-    $('#tariff-20').removeClass('tariff-active');
-    $('#tariff-40').removeClass('tariff-active');
-    $('#tariff-option-5').addClass('a-tariff-active');
-    $('#tariff-option-8').removeClass('a-tariff-active');
-    $('#tariff-option-20').removeClass('a-tariff-active');
-    $('#tariff-option-40').removeClass('a-tariff-active');
+
+  $('.tariff').each(function() {
+    $(this).click(function() {
+      $('#tariff-option').val($(this).data('val'));
+      $(this).addClass('tariff-active');
+      $('.tariff').not(this).removeClass('tariff-active');
+    });
   });
-  $('#tariff-8').click(function() {
-    $('#tariff-option').val("Тариф M-Безлимит");
-    $('#tariff-8').addClass('tariff-active');
-    $('#tariff-5').removeClass('tariff-active');
-    $('#tariff-20').removeClass('tariff-active');
-    $('#tariff-40').removeClass('tariff-active');
-    $('#tariff-option-8').addClass('a-tariff-active');
-    $('#tariff-option-5').removeClass('a-tariff-active');
-    $('#tariff-option-20').removeClass('a-tariff-active');
-    $('#tariff-option-40').removeClass('a-tariff-active');
-  });
-  $('#tariff-20').click(function() {
-    $('#tariff-option').val("Тариф L-Безлимит");
-    $('#tariff-20').addClass('tariff-active');
-    $('#tariff-8').removeClass('tariff-active');
-    $('#tariff-5').removeClass('tariff-active');
-    $('#tariff-40').removeClass('tariff-active');
-    $('#tariff-option-20').addClass('a-tariff-active');
-    $('#tariff-option-8').removeClass('a-tariff-active');
-    $('#tariff-option-5').removeClass('a-tariff-active');
-    $('#tariff-option-40').removeClass('a-tariff-active');
-  });
-  $('#tariff-40').click(function() {
-    $('#tariff-option').val("Тариф XL-Безлимит");
-    $('#tariff-40').addClass('tariff-active');
-    $('#tariff-8').removeClass('tariff-active');
-    $('#tariff-20').removeClass('tariff-active');
-    $('#tariff-5').removeClass('tariff-active');
-    $('#tariff-option-40').addClass('a-tariff-active');
-    $('#tariff-option-8').removeClass('a-tariff-active');
-    $('#tariff-option-20').removeClass('a-tariff-active');
-    $('#tariff-option-5').removeClass('a-tariff-active');
-  });
+
   $('#submit-button').click(function() {
   	var option = $('#tariff-option').val();
   	if (!$('#privacy-checkbox').prop("checked")) {
@@ -74,9 +40,11 @@ $(document).ready(function(){
     	$('#sub-info').css('font-size', '18px');
     }
   });
+
   $('#privacy-checkbox').click(function() {
     $('#submit-button').toggleClass('input-enabled');
   });
+
   $(window).bind('scroll',function(e){
       parallaxScroll();
   });
