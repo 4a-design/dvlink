@@ -243,6 +243,10 @@ form input[type=submit] {
 	line-height: 1.5em;
 	color: #797979;
 }
+.advantages-block img {
+	width: 50%;
+	padding: 20px;
+}
 #tariffs {
 	padding: 64px 0;
 	background-image: none;
