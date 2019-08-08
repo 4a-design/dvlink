@@ -77,4 +77,13 @@ $(document).ready(function(){
   $('#privacy-checkbox').click(function() {
     $('#submit-button').toggleClass('input-enabled');
   });
+  $(window).bind('scroll',function(e){
+    parallaxScroll();
+});
+
+  function parallaxScroll(){
+    var scrolled = $(window).scrollTop();
+    $('#mars').css('top',(-100-(scrolled*.10))+'px');
+    $('#sub-title').css('top',(334-(scrolled*.05))+'px');
+  }
 });
